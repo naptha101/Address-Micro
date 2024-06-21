@@ -22,4 +22,16 @@ public class AddressService {
 
         return r;
     }
+    public void setAddress(AddressResponse res){
+        AddressEntity e = new AddressEntity();
+        e.setId(res.getId());
+        e.setEmployee_id(res.getEmployee_id());
+        e.setLane1(res.getLane1());
+        e.setZip(res.getZip());
+        e.setLane2(res.getLane2());
+        e.setLane3(res.getLane3());
+        System.out.println(e.getId()+" "+e.getEmployee_id()+" "+e.getLane1()+" "+e.getLane3()+" "+e.getLane1());
+        repo.putAddress(e.getEmployee_id(),e.getLane1(),e.getLane2(),e.getLane3(), e.getZip(),e.getId());
+    }
+
 }
